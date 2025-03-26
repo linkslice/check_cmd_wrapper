@@ -16,7 +16,8 @@ Example usages:
   --label name=http_code --label regex="http_code:(\d+)" --label mode=parse --label warn=0 --label crit=0 \
   --label name=http_error --label regex="http_code:([45]\d\d)" --label mode=nomatch --label severity=2 --label message="HTTP error code detected"
 WEBSITE_CHECK OK -  | page_size=18023 response_time=0.209746 http_code=200 exec_time=0.224s
-
+````
+````
 ➜  /tmp ./check_cmd_wrapper.py \
   --command=curl \
   --command-args="-s -w \"size_download:%{size_download}\ntime_total:%{time_total}\nhttp_code:%{http_code}\n\" -o /dev/null https://httpstat.us/400" \
@@ -29,7 +30,8 @@ WEBSITE_CHECK OK -  | page_size=18023 response_time=0.209746 http_code=200 exec_
   --label name=http_code --label regex="http_code:(\d+)" --label mode=parse --label warn=0 --label crit=0 \
   --label name=http_error --label regex="http_code:([45]\d\d)" --label mode=nomatch --label severity=2 --label message="HTTP error code detected"
 WEBSITE_CHECK CRITICAL - HTTP error code detected | page_size=15 response_time=0.441797 http_code=400 exec_time=0.456s
-
+````
+````
 ➜  /tmp ./check_cmd_wrapper.py \
   --command=curl \
   --command-args="-s -w \"size_download:%{size_download}\ntime_total:%{time_total}\nhttp_code:%{http_code}\n\" -o /dev/null https://httpstat.us/401" \ 
